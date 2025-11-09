@@ -1,5 +1,5 @@
 import pygame
-
+import Player
 pygame.init()
 SCREEN_W, SCREEN_H = 400, 719
 screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
@@ -10,6 +10,7 @@ clock = pygame.time.Clock()
 
 running = True
 
+player = Player()
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

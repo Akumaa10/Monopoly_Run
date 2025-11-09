@@ -143,17 +143,17 @@ def playdicetwo(roll1, roll2, screen):
         num1 = random.randint(1,6)
         num2 = random.randint(1,6)
         if num1 == 1:
-            screen.blit(one,(75, 280) )
+            screen.blit(one,(69, 280) )
         elif num1 == 2:
-            screen.blit(two,(75, 280) )
+            screen.blit(two,(69, 280) )
         elif num1 == 3:
-            screen.blit(three,(75, 280) )
+            screen.blit(three,(69, 280) )
         elif num1 == 4:
-            screen.blit(four,(75, 280) )
+            screen.blit(four,(69, 280) )
         elif num1 == 5:
-            screen.blit(five,(75, 280) )
+            screen.blit(five,(69, 280) )
         elif num1== 6:
-            screen.blit(six,(75, 280) )
+            screen.blit(six,(69, 280) )
         if num2 == 1:
             screen.blit(one,(155, 280))
         elif num2 == 2:
@@ -169,7 +169,7 @@ def playdicetwo(roll1, roll2, screen):
         clock.tick(10)
         pygame.display.flip()
     screen.blit(board,(0,159))
-    screen.blit(roll1,(75, 280))
+    screen.blit(roll1,(69, 280))
     screen.blit(roll2,(155, 280))
     screen.blit(sprite, positionsxy[position])
 
@@ -229,7 +229,7 @@ def rolldice(screen):
     screen.blit(board, (0,159))
     screen.blit(sprite, positionsxy[player.position])
     if "hertz" in player.buffs:
-        screen.blit(rollimg,(75, 280))
+        screen.blit(rollimg,(69, 280))
         screen.blit(roll2img,(155, 280))
     else:
         screen.blit(rollimg,(110, 280))
@@ -251,16 +251,16 @@ def checksquare(screen):
             propertyname = squareinfo[0]
             screen.blit(grey)
             screensurface = pygame.image.load(f"./images/properties/{propertyname}.png")
-            screen.blit(screensurface,(60, 160))
-            screen.blit(upgrade,(110, 404))
+            screen.blit(screensurface,(57, 179))
+            screen.blit(upgrade,(110, 445))
             buytoggle = True
         elif property not in player.properties and player.money > price:
             price = property_cost[color]
             propertyname = squareinfo[0]
             screen.blit(grey)
             screensurface = pygame.image.load(f"./images/properties/{propertyname}.png")
-            screen.blit(screensurface,(60, 160))
-            screen.blit(buy, (110, 404))
+            screen.blit(screensurface,(57, 179))
+            screen.blit(buy, (110, 445))
             buytoggle = True
 
 

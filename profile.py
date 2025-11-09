@@ -2,6 +2,8 @@ import pygame
 import gc
 import pygame_gui
 
+from helper import display_text
+
 def clear_screen(screen):
     screen.fill((255, 255, 255))
     pygame.display.flip()
@@ -56,5 +58,12 @@ def render_profile(screen,player):
             rect[img] = pygame.Rect(all_pieces[img],imgs[img].get_size())
         screen.blit(imgs[img], rect.get(img,(0,0)))
 
+
+    elapsed = (pygame.time.get_ticks() - player.start_time) // 1000
+    days, remainder = divmod(elapsed,86400)
+    hours,remainder = divmod(remainder,3600)
+    minutes,remainder = divmod(remainder,60)
+    time_text = f"{days:02}d:{hours:02}h:{minutes:02}m"
+    display_text(screen,time_text,40,(0,0,0),"ByteBounce",(163,250))
     return button_clicked
 

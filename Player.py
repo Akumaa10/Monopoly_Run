@@ -18,13 +18,16 @@ class Player:
         self.position = 32
         self.boosts = {"roll":1,"go":1} 
         self.piece = "hat"
+        self.start_time = 0
         pass
 
-    def update_property(self,property:str): #property = str "pink_1"
-        if self.properties.get(property):
-            self.properties[property] += 1
-        else:
-            self.properties[property] = 0
+    def update_property(self,property:str,price): #property = str "pink_1"
+        if(self.money >= price):
+            if self.properties.get(property):
+                self.properties[property] += 1
+            else:
+                self.properties[property] = 0
+            self.money -= price
     
     def pass_go(self): #user has passed go
         prop_total = 0

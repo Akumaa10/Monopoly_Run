@@ -17,6 +17,7 @@ class Player:
         self.buffs = [] #double dice, prop_disc, 
         self.position = 32
         self.boosts = {"roll":1,"go":1} 
+        self.piece = "hat"
         pass
 
     def update_property(self,property:str): #property = str "pink_1"

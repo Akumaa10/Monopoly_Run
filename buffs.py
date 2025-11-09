@@ -21,7 +21,7 @@ def render_buff(screen):
 
     def button_clicked(screen,event_pos):
         if(lb_rect.collidepoint(event_pos)):
-            clear_screen(screen)
+            #clear_screen(screen)
             return "board"
         return None
 
